@@ -34,11 +34,11 @@
   }
 }
 
-.message {
-  display: flex;
-  gap: 6px;
-  flex-direction: column;
-  max-width: 100%;
+  .message {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    max-width: 100%;
 
   pre {
     scrollbar-width: thin;
@@ -131,10 +131,11 @@
     min-width: 0;
     flex-direction: column;
     max-width: 100%;
-    padding: 8px 16px;
-    border-radius: var(--radius);
+    padding: 12px 16px;
+    border-radius: 14px;
     border: 1px solid hsl(var(--border-hover));
     transition: 0.25s linear;
+    box-shadow: 0 1px 2px var(--shadow);
 
     &:hover {
       border-color: hsl(var(--border-active));
@@ -144,20 +145,20 @@
   .message-avatar-wrapper {
     .message-avatar {
       display: flex;
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: var(--radius);
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.5rem;
       text-align: center;
-      font-size: 0.785rem;
+      font-size: 0.75rem;
       padding: 0.125rem;
     }
 
     flex-shrink: 0;
     margin-left: 0.5rem;
-    border-radius: var(--radius);
+    border-radius: 0.5rem;
     border: 1px solid hsl(var(--border));
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
     user-select: none;
   }
 
@@ -213,7 +214,7 @@
     .message-content {
       background: var(--assistant-background);
       border: 1px solid var(--assistant-border);
-      box-shadow: 0.25rem 0.25rem 1rem 0 var(--assistant-shadow);
+      box-shadow: 0 1px 2px var(--assistant-shadow);
 
       &:hover {
         border-color: var(--assistant-border-hover);

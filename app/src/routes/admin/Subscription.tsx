@@ -6,12 +6,8 @@ import {
 } from "@/components/ui/card.tsx";
 import { useTranslation } from "react-i18next";
 import { useMemo, useReducer, useState } from "react";
-import {
-  getExternalPlanConfig,
-  getPlanConfig,
-  PlanConfig,
-  setPlanConfig,
-} from "@/admin/api/plan.ts";
+import { getExternalPlanConfig, getPlanConfig, setPlanConfig } from "@/admin/api/plan.ts";
+import type { PlanConfig } from "@/admin/api/plan.ts";
 import { useEffectAsync } from "@/utils/hook.ts";
 import { Switch } from "@/components/ui/switch.tsx";
 import {

@@ -10,8 +10,8 @@ function ActionButton({ onClick, working }: SendButtonProps) {
   return (
     <Button
       size={`icon`}
-      variant="outline"
-      className={`action-button`}
+      variant="default"
+      className={`action-button rounded-full`}
       onClick={onClick}
     >
       {working ? (

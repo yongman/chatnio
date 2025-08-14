@@ -1,10 +1,11 @@
-.main {
+  .main {
   position: relative;
   display: flex;
   flex-direction: row;
   width: 100%;
   height: calc(100% - 56px);
   overflow: hidden;
+  background: linear-gradient(to bottom, hsl(var(--background)) 0%, hsla(var(--background-container)) 100%);
 }
 
 .model-market {
@@ -343,21 +344,22 @@
   }
 }
 
-.sidebar {
-  display: flex;
-  flex-shrink: 0;
-  flex-direction: column;
-  width: 0;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  background: hsl(var(--background));
-  transition: 0.2s ease-in-out;
-  transition-property: width, background, box-shadow, border-right, opacity;
-  border-right: 0;
-  pointer-events: none;
-  opacity: 0;
-  overflow-x: hidden;
+  .sidebar {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    width: 0;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: hsl(var(--background));
+    transition: 0.2s ease-in-out;
+    transition-property: width, background, box-shadow, border-right, opacity;
+    border-right: 0;
+    pointer-events: none;
+    opacity: 0;
+    overflow-x: hidden;
+    backdrop-filter: blur(6px);
 
   &.open {
     width: 260px;
@@ -613,6 +615,9 @@
     justify-content: center;
     align-items: center;
 
+    max-width: 820px;
+    margin: 0 auto;
+
     button {
       margin: 0.5rem 0;
       white-space: nowrap;
@@ -652,13 +657,18 @@
     flex-grow: 1;
     width: 100%;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 
     .chat-messages-wrapper {
       width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
-      padding: 18px 24px;
+      padding: 18px 16px;
+      max-width: 820px;
+      margin: 0 auto;
+      gap: 12px;
     }
 
     .message {
@@ -675,6 +685,8 @@
     width: 100%;
     overflow: hidden;
     padding: 0.5rem 1rem 1rem;
+    border-top: 1px solid hsl(var(--border));
+    backdrop-filter: blur(6px);
 
     .input-action {
       display: flex;
@@ -682,23 +694,23 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 6px;
+      gap: 6px;
 
-      .action {
-        display: inline-flex;
-        flex-direction: row;
-        align-items: center;
-        overflow: hidden;
-        margin-right: 4px;
-        width: 36px;
-        height: 24px;
-        border-radius: 12px;
-        padding: 4px 10px;
-        transition: 0.5s;
-        cursor: pointer;
-        border: 1px solid hsl(var(--border));
-        color: hsl(var(--text-secondary));
-        user-select: none;
-        transition-delay: 0.25s;
+              .action {
+          display: inline-flex;
+          flex-direction: row;
+          align-items: center;
+          overflow: hidden;
+          width: 36px;
+          height: 28px;
+          border-radius: 14px;
+          padding: 4px 10px;
+          transition: 0.5s;
+          cursor: pointer;
+          border: 1px solid hsl(var(--border));
+          color: hsl(var(--text-secondary));
+          user-select: none;
+          transition-delay: 0.25s;
 
         svg {
           color: hsl(var(--text-secondary));
@@ -748,6 +760,8 @@
       flex-wrap: nowrap;
       width: 100%;
       height: min-content;
+      max-width: 820px;
+      margin: 0 auto;
 
       .chat-box {
         position: relative;
@@ -760,6 +774,12 @@
         color: hsl(var(--text));
         white-space: pre-wrap;
         padding-right: 3.25rem;
+        border-radius: 14px;
+        border: 1px solid hsl(var(--border));
+        background: hsl(var(--background));
+        padding-left: 0.875rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
 
         &.align {
           text-align: center;
@@ -794,9 +814,12 @@
 
       .action-button {
         position: absolute;
-        padding: 0 6px;
         right: 0.5rem;
         bottom: 0.5rem;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 9999px;
+        box-shadow: 0 2px 6px var(--shadow);
 
         .send-icon {
           fill: hsl(var(--text));
@@ -805,14 +828,15 @@
     }
 
     .input-options {
-      margin: 12px auto -8px;
+      margin: 8px auto 0;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: 6px;
       height: min-content;
+      max-width: 820px;
     }
   }
 }
