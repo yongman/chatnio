@@ -343,27 +343,29 @@
   }
 }
 
-.sidebar {
-  display: flex;
-  flex-shrink: 0;
-  flex-direction: column;
-  width: 0;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  background: hsl(var(--background));
-  transition: 0.2s ease-in-out;
-  transition-property: width, background, box-shadow, border-right, opacity;
-  border-right: 0;
-  pointer-events: none;
-  opacity: 0;
-  overflow-x: hidden;
+  .sidebar {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    width: 0;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: hsl(var(--background));
+    transition: 0.2s ease-in-out;
+    transition-property: width, background, box-shadow, border-right, opacity;
+    border-right: 0;
+    pointer-events: none;
+    opacity: 0;
+    overflow-x: hidden;
+    box-shadow: 0 0 0 transparent;
 
   &.open {
-    width: 260px;
+    width: 280px;
     border-right: 1px solid hsl(var(--border));
     pointer-events: auto;
     opacity: 1;
+    box-shadow: 0 0 0 transparent;
   }
 
   &.hidden {
@@ -653,13 +655,16 @@
     width: 100%;
     overflow: hidden;
 
-    .chat-messages-wrapper {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      padding: 18px 24px;
-    }
+          .chat-messages-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 24px 16px;
+        max-width: 880px;
+        margin: 0 auto;
+      }
 
     .message {
       margin-bottom: 0.75rem;
@@ -681,7 +686,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
 
       .action {
         display: inline-flex;
@@ -748,6 +753,13 @@
       flex-wrap: nowrap;
       width: 100%;
       height: min-content;
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 8px 12px;
+      background: hsl(var(--card));
+      border: 1px solid hsl(var(--border));
+      border-radius: 16px;
+      box-shadow: 0 1px 0 var(--shadow);
 
       .chat-box {
         position: relative;
@@ -805,14 +817,15 @@
     }
 
     .input-options {
-      margin: 12px auto -8px;
+      margin: 10px auto 0;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 4px;
+      gap: 6px;
       height: min-content;
+      max-width: 880px;
     }
   }
 }

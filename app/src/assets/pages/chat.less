@@ -131,13 +131,16 @@
     min-width: 0;
     flex-direction: column;
     max-width: 100%;
-    padding: 8px 16px;
-    border-radius: var(--radius);
-    border: 1px solid hsl(var(--border-hover));
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+    box-shadow: 0 1px 0 var(--shadow);
     transition: 0.25s linear;
 
     &:hover {
-      border-color: hsl(var(--border-active));
+      border-color: hsl(var(--border-hover));
+      box-shadow: 0 2px 0 var(--shadow);
     }
   }
 
@@ -146,10 +149,11 @@
       display: flex;
       width: 2.5rem;
       height: 2.5rem;
-      border-radius: var(--radius);
+      border-radius: 9999px;
       text-align: center;
       font-size: 0.785rem;
       padding: 0.125rem;
+      background: hsl(var(--card));
     }
 
     flex-shrink: 0;
@@ -213,10 +217,11 @@
     .message-content {
       background: var(--assistant-background);
       border: 1px solid var(--assistant-border);
-      box-shadow: 0.25rem 0.25rem 1rem 0 var(--assistant-shadow);
+      box-shadow: 0 1px 0 var(--assistant-shadow);
 
       &:hover {
         border-color: var(--assistant-border-hover);
+        box-shadow: 0 2px 0 var(--assistant-shadow);
       }
     }
 

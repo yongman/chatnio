@@ -27,6 +27,11 @@
     "src",
     "*.ts",
   ],
+  "exclude": [
+    "vite.config.ts",
+    "tailwind.config.js",
+    "postcss.config.js"
+  ],
   "baseUrl": ".",
   "references": [{ "path": "./tsconfig.node.json" }],
 }
